@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title >Page de connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content  padding>
+    <form #form="ngForm" >
+
+      <ion-grid>
+        <ion-row  justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+           
+          <br>
+          <br>
+          <br>
+            <div padding>
+              <ion-item>
+                <ion-input name="email"  type="email" placeholder="toi@email.com" #email required></ion-input>
+              </ion-item>
+              <br>
+              <ion-item>
+                <ion-input name="password" type="password" placeholder="Mot de passe" #password required></ion-input>
+              </ion-item>
+            </div>
+            <div padding>
+              <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block"(click)="logIn(email, password)">Se connecter</ion-button>
+            </div>
+           
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-content>
+
