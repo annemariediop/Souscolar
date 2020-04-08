@@ -1,0 +1,62 @@
+<ion-app>
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>ajouter un professeur</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+    <form (ngSubmit)="ajouterProf()">
+  
+  	<ion-item >
+      <ion-label lines="full">Prenom</ion-label>
+      <ion-input name="prenom" [(ngModel)]="formulaire.prenom" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label >Nom</ion-label>
+      <ion-input name="nom"  [(ngModel)]="formulaire.nom" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label >Adresse</ion-label>
+      <ion-input name="adresse" [(ngModel)]="formulaire.adresse" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label >Numéro</ion-label>
+      <ion-input name="numero" [(ngModel)]="formulaire.numero" type="tel" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label >Matière</ion-label>
+      <ion-input name="matiere" [(ngModel)]="formulaire.matiere" type="tel" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label >Niveaux</ion-label>
+      <ion-input name="niveaux" [(ngModel)]="formulaire.niveaux" type="text" required></ion-input>
+    </ion-item>
+
+     <ion-item lines="full">
+      <ion-label >Email</ion-label>
+      <ion-input name="email" [(ngModel)]="formulaire.email" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label >Password</ion-label>
+      <ion-input name="password" [(ngModel)]="formulaire.password" type="password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" type="submit" class="ion-no-margin" >Ajouter</ion-button>
+      	<!--- <ion-button (click)="add()">Ajouter</ion-button> -->
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
+</ion-app>

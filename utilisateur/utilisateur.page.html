@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Liste des utilisateurs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+      <ion-col>
+        <ion-item lines="full">
+        <ion-label >Prenom</ion-label>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label >Nom</ion-label>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label >Email</ion-label>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label >numéro</ion-label>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label >Matiere</ion-label>
+      </ion-item>
+      <ion-item colomn="full">
+        <ion-label >Niveau</ion-label>
+      </ion-item>
+      </ion-col>
+    </ion-row>
+<ion-item lines="none" *ngFor="utilisateurs">
+	<ion-row>
+	<ion-item lines="full">
+        <ion-label >{{ utilisateurs.prenom }}</ion-label>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label >{{ utilisateurs.Nom}}</ion-label>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label >{{ utilisateurs.email}}</ion-label>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label >{{ utilisateurs.numéro}}</ion-label>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label >{{ utilisateurs.matiere}}</ion-label>
+      </ion-item>
+      <ion-item colomn="full">
+        <ion-label >{{ utilisateur.niveau}}</ion-label>
+      </ion-item>
+      </ion-col>
+	</ion-row>
+</ion-item>
+    <ion-button (click)="getUtilisateurs()" shape="round" slot="end">
+
+
+</ion-content>
