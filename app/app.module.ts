@@ -1,3 +1,4 @@
+import { environment } from '../environments/environment.prod';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -13,8 +14,20 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from '../environments/environment';
+import { Facebook } from '@ionic-native/facebook/ngx';
 
+import { IonicRatingModule } from 'ionic4-rating';
+import {GooglePlus } from '@ionic-native/google-plus/ngx'
+
+// export const firebase={
+//   apiKey: "AIzaSyCo-rq7C-li_18NXsnaSloxrtUia1nzrHk",
+//   authDomain: "souscolar.firebaseapp.com",
+//   databaseURL: "https://souscolar.firebaseio.com",
+//   projectId: "souscolar",
+//   storageBucket: "souscolar.appspot.com",
+//   messagingSenderId: "382401743066",
+//   appId: "1:382401743066:web:218a0583efe1e1d898fde3"
+// };
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,19 +35,25 @@ import { environment } from '../environments/environment';
   imports: [BrowserModule,
     IonicModule.forRoot(), 
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestoreModule],
+    AngularFirestoreModule,
+    IonicRatingModule],
   providers: [
     StatusBar,
     SplashScreen,
+    GooglePlus,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
    
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    Facebook,
+    
     
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+
+}
 

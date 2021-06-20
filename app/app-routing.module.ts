@@ -3,41 +3,43 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+  { path: 'home', loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule)},
 
   {
-    path: 'registerparent',
-    loadChildren: () => import('./registerparent/registerparent.module').then( m => m.RegisterparentPageModule)
-  },
  
-  {
-    path: 'confidentialite',
-    loadChildren: () => import('./confidentialite/confidentialite.module').then( m => m.ConfidentialitePageModule)
-  },
-  {
-    path: 'login-page',
-    loadChildren: () => import('./login-page/login-page.module').then( m => m.LoginPagePageModule)
-  },
-  {
-    path: 'accueil',
-    loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
-  },
-  {
-    path: 'home1',
-    loadChildren: () => import('./home1/home1.module').then( m => m.Home1PageModule)
-  },
-  {
     path: 'verify-email',
     loadChildren: () => import('./verify-email/verify-email.module').then( m => m.VerifyEmailPageModule)
   },
+ 
   {
-    path: 'home2',
-    loadChildren: () => import('./home2/home2.module').then( m => m.Home2PageModule)
+    path: 'index',
+    loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule)
+  },
+  {
+    path: 'connexion',
+    loadChildren: () => import('./connexion/connexion.module').then( m => m.ConnexionPageModule)
+  },
+  
+  {
+    path: 'inscription',
+    loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
+  },
+  {
+    path: 'my-cours',
+    loadChildren: () => import('./my-cours/my-cours.module').then( m => m.MyCoursPageModule)
+  },
+  {
+    path: 'choix-cours',
+    loadChildren: () => import('./choix-cours/choix-cours.module').then( m => m.ChoixCoursPageModule)
+  },
+  {
+    path: 'details-matiere/:libelle',
+    loadChildren: () => import('./details-matiere/details-matiere.module').then( m => m.DetailsMatierePageModule)
   },
 ];
 
 @NgModule({
-  imports: [
+  imports : [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]

@@ -1,3 +1,4 @@
+import { RouterModule,Routes } from '@angular/router';
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
@@ -10,6 +11,21 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  navigate  =
+  [
+    {
+      title : "Home",
+      url   : "/choix-cours",
+      icon  : "home"
+    },
+    {
+      title : "Mes cours",
+      url   : "/my-cours",
+      icon  : "contacts"
+    },
+   
+  ];
+  selectedPath: any;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -24,4 +40,8 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+  
+  
+    
+  
 }
